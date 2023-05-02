@@ -14,23 +14,27 @@ func media(r Retangulo) {
 }
 
 func main() {
-	r := Retangulo{Largura:5 ,altura: 10 }
+	r := Retangulo{Largura: 5, altura: 10}
 	media(r)
+
+	a := Aluno{
+		nome:  "eu",
+		idade: 18,
+		notas: []float64{1, 2, 3, 4, 5},
+	}
+	fmt.Println(media_n(a))
 }
 
-type Retangle struct {
-	width  int
-	height int
+type Aluno struct {
+	nome  string
+	idade int
+	notas []float64
 }
 
-func () {
-	fmt.Println(" ")
-	fmt.Scan(&width)
-	fmt.Println(" ")
-	fmt.Scan(&height)
-
-	fmt.print(area())
-}
-func area (r Rectangle) int {
-	return w.width * w.height
+func media_n(a Aluno) float64 {
+	var sum float64
+	for _, nota := range a.notas {
+		sum += nota
+	}
+	return sum / float64(len(a.notas))
 }

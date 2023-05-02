@@ -3,17 +3,18 @@ package main
 import "fmt"
 
 type Pessoa struct {
-	nome  string
-	idade int
+	nome     string
+	idade    int
+	endereço string
 }
-type Endereço struct {
+type Endereco struct {
 	rua    int
 	número int
 	cidade string
 	estado string
 }
 
-func endereço_retorno(e Endereço) {
+func endereço_retorno(e Endereco) {
 	fmt.Println(e.rua)
 	fmt.Println(e.número)
 	fmt.Println(e.cidade)
@@ -24,7 +25,7 @@ func main() {
 	p := Pessoa{
 		nome:  "",
 		idade: 12,
-		endereco: Endereço{
+		endereço: Endereco{
 			rua:    505,
 			número: 96,
 			cidade: "br",
